@@ -14,7 +14,6 @@ public:
   int get_age(); // getter de la edad
   int get_id(); // getter del id
 
-
   void set_name(std::string);
   void set_age(int);
   void set_id(int);
@@ -23,5 +22,3 @@ private:
   int age; // edad de la persona
 	int id; // cedula
 };
-
-
