@@ -54,7 +54,7 @@ public:
    * el id
    * @return vector<string> con los datos
    */
-  std::vector<std::vector<std::string>> load_data(std::string key);
+  std::vector<std::vector<std::string>> load_data(std::string id);
 
   /*
    * metodo para dividir un string
