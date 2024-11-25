@@ -30,7 +30,7 @@ public:
    * columna se encuentra el dato
    * string key: este se le pasa para buscar ese dato
    * retorna un dato
-   * booleano (verdadero o falso segun si se encontro)*/ // muestra todo el contenido el archivo
+   * booleano (verdadero o falso segun si se encontro)*/
   bool find(std::string); // busca una coincidencia en el archivo
   void write(std::vector<std::string> data); // escribe en el archivo los datos
   void remove(std::string key);

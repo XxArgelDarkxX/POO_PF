@@ -162,12 +162,20 @@ void ArchivoCSV::update(std::string id, std::string replace,
  * @return vector<vector<string>> data: devuelve un vector con los datos 
  * cargados*/
 std::vector<std::vector<std::string>> ArchivoCSV::load_data(std::string id) {
-  std::ifstream read(this->get_filename()); // archivo que lee
-  std::string line; // variable a la cual se cargan los datos de x linea
-  std::getline(read, line); // se leen los encabezados pq no queremos
-  std::vector<std::vector<std::string>> data; // se declara la matriz
+  // archivo que lee
+  std::ifstream read(this->get_filename()); 
+  if (!read.is_open()) {
+    throw std::runtime_error("Error: No se pudo abrir el archivo " + this->get_filename());
+}
+  // variable a la cual se cargan los datos de x linea
+  std::string line;  
+  // se leen los encabezados pq no queremos
+  std::getline(read, line);
+  // se declara la matriz
+  std::vector<std::vector<std::string>> data;
   while (std::getline(read, line)) {
-    auto row = split(line, ','); // leo una linea
+    // leo una linea
+    auto row = split(line, ','); 
     // si es igual al id la agrego a mi matriz
     if (row[0] == id) { 
       data.push_back(row);
