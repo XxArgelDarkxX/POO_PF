@@ -1,8 +1,8 @@
 #pragma once
 
 #include "ArchivoCSV.hpp"
-#include "Cuenta_Ahorro.hpp"
-#include "Cuenta_Corriente.hpp"
+#include "TarjetaCredito.hpp"
+#include "TarjetaDebito.hpp"
 #include "Persona.hpp"
 #include <vector>
 
@@ -13,17 +13,22 @@ public:
 
   void agregar_cuenta_ahorro();
   void agregar_cuenta_corriente();
-  ArchivoCSV get_file();
+  void add_debit_card(TarjetaDebito tarjeta);
+  void add_credit_card(TarjetaCredito tarjeta);
+  std::vector<TarjetaDebito>& get_debit_cards();
+  std::vector<TarjetaCredito>& get_credit_cards();
+
+  // manipulacion de archivos
+  ArchivoCSV& get_file();
   void load_data(std::string id);
   void save_data();
   void update_data();
   void remove_data();
-
-  bool get_DataLoaded();
+  bool& get_DataLoaded();
 
 private:
-  std::vector<Cuenta_Ahorro> saving_accounts;
-  std::vector<Cuenta_Corriente> checking_accounts;
+  std::vector<TarjetaDebito> debit_cards;
+  std::vector<TarjetaCredito> credit_cards;
   bool data_loaded = false;
   ArchivoCSV file{"DB/Clientes/clientes.csv"};
 };
