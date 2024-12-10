@@ -2,15 +2,17 @@
 #include <iostream>
 #include <string>
 
-class PersonaModel {
+class PersonModel {
 
 private:
-  PersonaModel(std::string name,int age, int id);
-  std::string name; 
+  std::string name;
   int age;
   int id;
+
 public:
+  PersonModel(int id,std::string name, int age);
   std::string GetName();
   int GetAge();
   int GetId();
+  virtual std::string ToString();
 };
