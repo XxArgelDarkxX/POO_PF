@@ -1,18 +1,11 @@
-#include "include/ArchivoCSV.hpp"
-#include "include/Cliente.hpp"
-#include "include/Persona.hpp"
-#include "include/TarjetaCredito.hpp"
+#include "include/models/ClientModel.hpp"
+#include "include/service/ClientService.hpp"
 #include <iostream>
 #include <vector>
 
-int main() {
-  Cliente cliente;
-  cliente.load_data("1");
-  auto credit_cards = cliente.get_credit_cards();
-
-  for (auto& card : credit_cards) {
-    card.show_info();
-  }
+int main() { 
+  ClientService service;
+  ClientModel client(123,"sebastian",15);
+  service.Add(client);
   return 0;
 }
-
