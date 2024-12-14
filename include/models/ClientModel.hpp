@@ -14,4 +14,5 @@ private:
 public:
   ClientModel(int id,std::string name, int age);
   std::string ToString() override;
+  void ShowInfo();
 };

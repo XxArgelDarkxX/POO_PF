@@ -10,7 +10,7 @@ std::vector<std::string> split(std::string line, char delimiter) {
   return tokens;
 }
 
-ClientService::ClientService(){}
+ClientService::ClientService() {}
 
 bool ClientService::Find(int id) {
   std::string strid = std::to_string(id);
@@ -71,4 +71,18 @@ void ClientService::Read() {
               << std::endl;
   }
   std::cout << "__________________________" << std::endl;
+}
+
+ClientModel ClientService::LoadData(int id) {
+  std::ifstream file(filename);
+  std::string line;
+  while (std::getline(file, line)) {
+    auto data = split(line, ',');
+    if (data[0] == std::to_string(id)) {
+      int id = std::stoi(data[0]);
+      std::string name = data[1];
+      int age = std::stoi(data[2]);
+      return ClientModel(id, name, age);
+    }
+  }
 }

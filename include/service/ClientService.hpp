@@ -14,4 +14,5 @@ public:
   void Update(ClientModel client);
   void Read();
   void Add(ClientModel client);
+  ClientModel LoadData(int id);
 };

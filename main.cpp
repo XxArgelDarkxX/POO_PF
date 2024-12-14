@@ -5,7 +5,7 @@
 
 int main() { 
   ClientService service;
-  service.Remove(123);
+  service.Update(ClientModel(124,"pepsi",25));
   service.Read();
   return 0;
 }
