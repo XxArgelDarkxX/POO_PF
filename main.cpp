@@ -5,7 +5,7 @@
 
 int main() { 
   ClientService service;
-  ClientModel client(111,"messi",33);
-  service.Add(client);
+  service.Remove(123);
+  service.Read();
   return 0;
 }
