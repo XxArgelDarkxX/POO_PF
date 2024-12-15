@@ -5,9 +5,11 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class ClientService{
 public:
-  std::string filename = "db/clientes.csv";
+  string filename = "db/clientes.csv";
   ClientService();
   bool Find(int id);
   void Remove(int id);

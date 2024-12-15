@@ -2,14 +2,16 @@
 #include <iostream>
 #include "models/PersonModel.hpp"
 
+using namespace std;
+
 class AdminModel : public PersonModel {
 private:
-  std::string password;
+  string password;
   int admin_id;
 public:
-  AdminModel(int id, std::string name, int age, std::string password);
-  std::string GetPassword();
+  AdminModel(int id, string name, int age, string password);
+  string GetPassword();
   int GetAdminId();
-  std::string ToString();
+  string ToString() override;
   void ShowInfo();
 };

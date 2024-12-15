@@ -2,20 +2,21 @@
 #include <iostream>
 #include <string>
 #include "PersonModel.hpp"
+using namespace std;
 
 class EmployeeModel : public PersonModel {
 private:
-  std::string position;
+  string position;
   float salary;
   int bank_id;
 
 public:
-  EmployeeModel(int id, std::string name, int age, std::string position,
+  EmployeeModel(int id, string name, int age, string position,
   float salary);
-  std::string GetPosition();
+  string GetPosition();
   float GetSalary();
   int GetBankId();
 
-  std::string ToString();
+  string ToString();
   void ShowInfo();
 };

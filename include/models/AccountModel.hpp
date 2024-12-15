@@ -2,6 +2,8 @@
 #include "models/AccountTypeModel.hpp"
 #include <string>
 
+using namespace std;
+
 
 class AccountModel {
 private:
@@ -9,6 +11,6 @@ private:
   AccountTypeModel type;
 
 public:
-  AccountModel(std::string owner,float balance);
+  AccountModel(string owner,float balance);
   float GetBalance();
 };

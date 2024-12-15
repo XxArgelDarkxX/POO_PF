@@ -1,6 +1,7 @@
 #include "../../include/models/CardModel.hpp"
+using namespace std;
 
-CardModel::CardModel(std::string brand, int number, int cvv, float balance, CardTypeModel type) {
+CardModel::CardModel(string brand, int number, int cvv, float balance, CardTypeModel type) {
   this->brand = brand;
   this->number = number;
   this->cvv = cvv;
@@ -8,7 +9,7 @@ CardModel::CardModel(std::string brand, int number, int cvv, float balance, Card
   this->type = type;
 }
 
-std::string CardModel::GetBrand() {
+string CardModel::GetBrand() {
   return this->brand;
 }
 
