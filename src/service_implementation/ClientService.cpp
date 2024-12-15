@@ -10,8 +10,12 @@ std::vector<std::string> split(std::string line, char delimiter) {
   return tokens;
 }
 
+// constructor
 ClientService::ClientService() {}
 
+/*metodo de busqueda de un cliente
+ * @param int id: el id del cliente que se va a buscar
+ * @return bool*/
 bool ClientService::Find(int id) {
   std::string strid = std::to_string(id);
   std::ifstream file(filename);
@@ -25,6 +29,9 @@ bool ClientService::Find(int id) {
   return false;
 }
 
+/* metodo de agregar a un cliente a la db
+ * @param ClientModel client: este es un modelo de cliente
+ * @return void*/
 void ClientService::Add(ClientModel client) {
   std::ofstream file(filename, std::ios::app);
   file << client.ToString();
@@ -73,6 +80,11 @@ void ClientService::Read() {
   std::cout << "__________________________" << std::endl;
 }
 
+/* carga los datos de algun cliente a tiempo de ejecucion
+ * se debe de utilizar el find para verificar si el cliente existe
+ * antes de usar este metodo
+ * @param int id: el id del cliente del cual se cargan los datos
+ * @return ClientModel un modelado del cliente con los datos del db*/
 ClientModel ClientService::LoadData(int id) {
   std::ifstream file(filename);
   std::string line;

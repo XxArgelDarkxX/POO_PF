@@ -4,8 +4,7 @@
 #include <vector>
 
 int main() { 
-  ClientService service;
-  service.Update(ClientModel(124,"pepsi",25));
-  service.Read();
+  ClientService client_service;
+  client_service.Read();
   return 0;
 }

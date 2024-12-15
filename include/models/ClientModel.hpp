@@ -13,6 +13,10 @@ private:
 
 public:
   ClientModel(int id,std::string name, int age);
+
+  std::vector<CardModel>& GetCards();
+  std::vector<AccountModel>& GetAccounts();
+
   std::string ToString() override;
   void ShowInfo();
 };
