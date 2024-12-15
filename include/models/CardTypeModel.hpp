@@ -1,7 +1,7 @@
 #pragma once
 
 
-class CardTypeModel : public CardModel {
+class CardTypeModel{
     private:
         bool is_credit;
         bool is_debit;
