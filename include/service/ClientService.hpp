@@ -1,18 +1,20 @@
 #pragma once
-#include "PersonService.hpp"
 #include "../models/ClientModel.hpp"
-#include <string>
 #include <fstream>
 #include <sstream>
+#include <string>
 #include <vector>
 
-class ClientService : public PersonService {
+using namespace std;
+
+class ClientService{
 public:
-  std::string filename = "db/clientes.csv";
-ClientService();
-bool Find(int id) override;
-void Add(ClientModel client);
-void Remove(int id) override;
-void Update(int id) override;
-void Read() override;
+  string filename = "db/clientes.csv";
+  ClientService();
+  bool Find(int id);
+  void Remove(int id);
+  void Update(ClientModel client);
+  void Read();
+  void Add(ClientModel client);
+  ClientModel LoadData(int id);
 };

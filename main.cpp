@@ -4,8 +4,8 @@
 #include <vector>
 
 int main() { 
-  ClientService service;
-  ClientModel client(123,"sebastian",15);
-  service.Add(client);
+  ClientModel client_model(122,"camilo",15);
+  ClientService client_service;
+  client_service.Add(client_model);
   return 0;
 }

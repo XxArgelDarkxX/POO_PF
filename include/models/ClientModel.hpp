@@ -5,13 +5,20 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class ClientModel : public PersonModel {
 
 private:
-  std::vector<CardModel> cards;
-  std::vector<AccountModel> accounts;
+  vector<CardModel> cards;
+  vector<AccountModel> accounts;
 
 public:
-  ClientModel(int id,std::string name, int age);
-  std::string ToString() override;
+  ClientModel(int id,string name, int age);
+
+  vector<CardModel>& GetCards();
+  vector<AccountModel>& GetAccounts();
+
+  string ToString() override;
+  void ShowInfo();
 };
