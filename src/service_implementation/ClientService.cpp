@@ -1,14 +1,5 @@
 #include "../../include/service/ClientService.hpp"
-
-std::vector<std::string> split(std::string line, char delimiter) {
-  std::vector<std::string> tokens;
-  std::string token;
-  std::stringstream ss(line);
-  while (std::getline(ss, token, delimiter)) {
-    tokens.push_back(token);
-  }
-  return tokens;
-}
+#include "../../include/models/utils.hpp"
 
 ClientService::ClientService() : PersonService() {}
 

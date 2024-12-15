@@ -1,11 +1,17 @@
 #include "include/models/ClientModel.hpp"
 #include "include/service/ClientService.hpp"
+#include "include/models/CardModel.hpp"
+#include "include/models/CardTypeModel.hpp"
+#include "include/service/CardService.hpp"
 #include <iostream>
 #include <vector>
 
 int main() { 
-  ClientService service;
-  ClientModel client(123,"sebastian",15);
-  service.Add(client);
+  CardModel card(1234, 123, 123456, CardTypeModel());
+  card.type.SetType(true, false);
+  card.type.SetCreditLimit(1000);
+  card.type.SetInterestRate(0);
+  CardService card_service(card);
+  card_service.Add(card);
   return 0;
 }

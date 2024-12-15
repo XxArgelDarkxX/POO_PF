@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 
 class CardTypeModel{
     private:
@@ -12,7 +12,8 @@ class CardTypeModel{
         std::string GetType();
         float GetCreditLimit();
         float GetInterestRate();
-        void SetType(bool is_credit, bool is_debit, std::string type);
-        void SetCreditLimit(float credit_limit);
-        void SetInterestRate(float interest_rate);
+        void SetType(bool, bool);
+        void SetCreditLimit(float);
+        void SetInterestRate(float);
+        void PayDoubts(float);
 };
