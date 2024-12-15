@@ -2,18 +2,22 @@
 #include "CardTypeModel.hpp"
 #include <string>
 
+using namespace std;
 /* */ 
 class CardModel {
 
 private:
-  std::string brand;
+  string brand;
   int number;
   int cvv;
   float balance;
   CardTypeModel type;
 public:
-  std::string GetBrand();
+  CardModel(string brand, int number, int cvv, float balance, CardTypeModel type);
+  string GetBrand();
   int GetNumber();
   int GetCvv();
   float GetBalance();
+  CardTypeModel GetType();
+  void Transfer(float amount);
 };
