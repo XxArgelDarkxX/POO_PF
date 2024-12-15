@@ -16,4 +16,7 @@ public:
   int GetNumber();
   int GetCvv();
   float GetBalance();
+  void Transfer(float amount);
+  void SaveFunds(float amount, bool is_credit);
+  void WithdrawFunds(float amount, bool is_credit);
 };
