@@ -5,5 +5,6 @@ private:
 
 public:
   ClientView();
+  void ShowMenu();
 
 };
